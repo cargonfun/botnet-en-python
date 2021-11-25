@@ -7,14 +7,14 @@ socketServidor.listen(1)
 print("Servidor en escucha y a la espera de conexiones")
 socketConexion, addr = socketServidor.accept()
 print("Conexión realizada " + str(addr))
-mensaje = connection.Socket.recv(1024)
+mensaje = socketConexion.recv(1024)
 print(mensaje)
 comando = ""
-while comando != "exit":
+while comando != "salir":
 	comando = input("Ingrese un comando: ")
-	socketConexion.send(commando.encode())
+	socketConexion.send(comando.encode())
 	mensaje = socketConexion.recv(1024).decode()
 	print(mensaje)
 
-socketConexion.shutdown(SHUT_RDWR)
+#socketConexion.shutdown(SHUT_RDWR)
 socketConexion.close()
