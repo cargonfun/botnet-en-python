@@ -13,7 +13,7 @@ comando = ""
 while comando != "salir":
 	comando = input("Ingrese un comando: ")
 	socketConexion.send(comando.encode())
-	mensaje = socketConexion.recv(1024).decode()
+	mensaje = socketConexion.recv(4064).decode()
 	print(mensaje)
 
 #socketConexion.shutdown(SHUT_RDWR)
